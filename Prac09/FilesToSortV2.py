@@ -1,10 +1,4 @@
-"""
-CP1404/CP5632 Practical
-File renaming and os examples
-"""
 import os, shutil
-
-__author__ = 'Lindsay Ward'
 
 print("Current directory is", os.getcwd())
 
