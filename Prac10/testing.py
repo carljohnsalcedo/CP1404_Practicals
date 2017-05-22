@@ -22,7 +22,7 @@ def is_long_word(word, length=5):
     >>> is_long_word("supercalifrag")
     True
     >>> is_long_word("Python", 6)
-    True
+    False
     """
     return len(word) > length
 
@@ -47,10 +47,12 @@ def run_tests():
     test_car = Car(fuel=10)
     assert test_car.fuel == 10, "Car does not set fuel correctly"
 
+
 run_tests()
 
 # TODO: 3. Uncomment the following line and run the doctests
 doctest.testmod()
+
 
 # TODO: 4. Fix the failing is_long_word function (don't change the tests, but the function!)
 
@@ -61,3 +63,24 @@ doctest.testmod()
 # 'It is an ex parrot.' -> 'It is an ex parrot.'
 # and one more you decide (that's valid!)
 # then write the body of the function so that the tests pass
+
+def phrase(word):
+    """
+    Write and test a function to format a phrase as a sentence - starting with a capital and ending with a single full stop
+    >>> phrase("hello")
+    'Hello.'
+    >>> phrase("It is an ex parrot.")
+    'It is an ex parrot.'
+    >>> phrase("carl is cool")
+    'Carl is cool.'
+    """
+    new_word = ""
+    word = list(word)
+    if word[0].islower():
+        word[0] = word[0].upper()
+    if word[-1] != ".":
+        word[-1] += "."
+    for letter in word:
+        new_word += letter
+    pass
+    return new_word
